@@ -1,8 +1,10 @@
 <?php
 	include '../admin/db_connect.php';
-    $post_id = trim($_POST['post_id']);
     $title = trim($_POST['title']);
     $discretion = trim($_POST['discretion']);
+    $poster_name = trim($_POST['poster_name']);
+	
+	
 	$empty = $_FILES['file']['tmp_name'];
 	if (!empty($empty)) {
 		$image = $_FILES['file']['tmp_name'];
@@ -12,12 +14,12 @@
 		}else{$image ='';
 		$img ='';
 	}
-	$result = db_query("UPDATE `posts` SET `title` = '$title', `discretion` = '$discretion', `image` = '$image' WHERE `posts`.`post_id` = '$post_id'");
-	if($result === false){
+	//echo  $title . $discretion  . $poster_name. $image ;
+	
+	$result = db_query("INSERT INTO `posts`(`title`, `discretion`, `image`, `poster_name`) VALUES ('$title','$discretion','$image','$poster_name')");
+	if($result === false) {
 		echo "Not connection";
 		} else {
-		header("Location: ../search_view.php?post_id=$post_id");
-	}
+		header('Location: ../index.php');
+	} 
 	
-?>
-

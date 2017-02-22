@@ -1,13 +1,9 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
-<html >
+<html>
 	<head>
-		<meta charset="UTF-8">
-		<title>Sign-Up/Login Form</title>
-		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/normalize.min.css">
-		<link rel="stylesheet" href="css/style.css">	
 		<script src='js/jquery.min.js'></script>
-
+		<script src="js/add_del_edit_comment.js" data-ajax="false" type="text/javascript"></script>
+		<link rel="stylesheet" href="css/comment.css">
+		<style>.BroweForFile > input{display: none;} </style>
 	</head>
-	<body>
+<body>

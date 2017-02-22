@@ -14,7 +14,7 @@
 	$num_rows = mysqli_num_rows($result);
 	if($num_rows>0){
 		echo 0;
-	}else{
+		}else{
 		$result = db_query("INSERT INTO `login` (`u_id`, `frist_name`, `last_name`, `user_name`, `password`) VALUES (NULL, '$frist_name', '$last_name', '$user', '$password');");	
 		echo 1;
 	}	

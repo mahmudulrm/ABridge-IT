@@ -16,4 +16,21 @@
 		$result = mysqli_query($connection,$query);
 		return $result;
 	}
+		function runQuery($query) {
+			$result = db_query($query);
+			
+		while($row = $result->fetch_assoc()) {
+			$resultset[] = $row;
+		}		
+		if(!empty($resultset))
+			return $resultset;
+	}
+	
+	function numRows($query) {
+		$result  = db_query($query);
+		$rowcount = mysqli_num_rows($result);
+		return $rowcount;	
+	}
+	
+	
 ?>
